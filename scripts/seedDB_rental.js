@@ -14,9 +14,9 @@
 // Here's the rental items
 
 const bookSeed = [{
-        category: "Outdoor Tools",
-        type: "Chainsaws",
-        item: "16 inch gas-powered Makita chainsaw",
+        category: "Lawn & Garden",
+        image: "https://www.homedepot.com/tool-truck-rental/assets/img/Makita/336x336/Makita-16-in.-Gas-chainsaw-image-lg.jpg",
+        item: "16 inch Gas-powered Makita Chainsaw",
         price: "20", // Dollars per hour
         // User info
         first_name: "John",
@@ -31,9 +31,9 @@ const bookSeed = [{
     },
 
     {
-        category: "Indoor Tools",
-        type: "Carpet Cleaners",
-        item: "RugDoctor Pro",
+        category: "Home Cleaning",
+        item: "RugDoctor Pro Carpet Cleaner",
+        image: "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Enterprise/Tool_and_Truck_Rental/Floorcare_Rental/carpet-cleaner-.jpg",
         price: "30", // Dollars per hour
         // User info
         first_name: "Joe",
@@ -48,8 +48,25 @@ const bookSeed = [{
     },
 
     {
-        category: "Large Equipment",
-        type: "Aerial Equipment",
+        category: "Electronics",
+        item: "RugDoctor Pro Carpet Cleaner",
+        image: "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Enterprise/Tool_and_Truck_Rental/Floorcare_Rental/carpet-cleaner-.jpg",
+        price: "30", // Dollars per hour
+        // User info
+        first_name: "Joe",
+        last_name: "Jones",
+        address_1: "12850 S Quivira Rd",
+        address_2: "",
+        city: "Overland Park",
+        state: "KS",
+        zip: "66213",
+        email: "joe.jones@gmail.com",
+        phone: "913-555-5556"
+    },
+
+    {
+        category: "Transportation",
+        image: "https://contentgrid.homedepot-static.com/hdus/en_US/DTCCOMNEW/fetch/Enterprise/Tool_and_Truck_Rental/Large_Equipment_Rental/Boom-Lift-JLG-T500.jpg",
         item: "Boom Lift by Compact Power",
         price: "150", // Dollars per hour
         // User info
