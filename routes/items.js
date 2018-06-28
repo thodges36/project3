@@ -5,7 +5,7 @@ var item = require("../models/items");
 var multer = require("multer");
 
 var storage = multer.diskStorage({
-    filename: function(req, file, callback) {
+    filename: function (req, file, callback) {
         callback(null, Date.not() + file.originalname);
     }
 });
@@ -26,8 +26,8 @@ var upload = multer({
 
 
 router.get("/", function (req, res) {
-    item.find({}, function(err, allitems) {
-        if(err) {
+    item.find({}, function (err, allitems) {
+        if (err) {
             console.log(err)
         } else {
             res.render("items/index", {
@@ -35,18 +35,18 @@ router.get("/", function (req, res) {
             })
         }
         item.find({}, function (err, allitems) {
-            if(err) {
+            if (err) {
                 console.log(err);
             } else {
                 // function (error, res, body) {
-                //     if (!error && response.statusCode == 200) {
-                //         console.log(body);
-                        res.render("items/index", {
-                            items: allitems 
-                        });
-                    }
-                }
-            // }
-        // });
-    )
-}
+                //    if (!error && response.statusCode == 200) {
+                console.log(allitems);
+                res.render("items/index", {
+                    items: allitems
+                });
+            }
+        });
+
+
+    });
+});
