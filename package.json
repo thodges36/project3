@@ -15,13 +15,14 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.5.0",
-    "nodemon": "^1.11.0"
+
   },
   "dependencies": {
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
-    "mongoose": "^5.0.11"
+    "mongoose": "^5.0.11",
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.11.0"
   }
 }
