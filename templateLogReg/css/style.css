@@ -29,7 +29,7 @@ body {
 }
 h1 {
     
-    color: #354660;
+    color: #0b4379;
     text-align: center;
     padding: 1em 0 0 0;
     font-size: 3em;
@@ -41,7 +41,7 @@ h1 {
     width: 50%;
 }
 .banner {
-    background: url(../images/cross.png)no-repeat 0px 0px;
+    background: url(../images/grey.jpg)no-repeat 0px 0px;
     background-size: cover;
 }
 
@@ -56,7 +56,7 @@ h1 {
     width: 48%;
 }
 .signin-form {
-    background: url(../images/cross.png)no-repeat 0px 0px;
+    background: url(../images/grey.jpg)no-repeat 0px 0px;
     background-size: cover;
     padding: 2em 2em;
 	text-align: center;
