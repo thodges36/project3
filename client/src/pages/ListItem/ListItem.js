@@ -15,23 +15,23 @@ class Books extends Component {
     synopsis: ""
   };
 
-  componentDidMount() {
-    this.loadBooks();
-  }
+//   componentDidMount() {
+//     this.loadBooks();
+//   }
 
-  loadBooks = () => {
-    API.getBooks()
-      .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-      )
-      .catch(err => console.log(err));
-  };
+//   loadBooks = () => {
+//     API.getBooks()
+//       .then(res =>
+//         this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+//       )
+//       .catch(err => console.log(err));
+//   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
-  };
+//   deleteBook = id => {
+//     API.deleteBook(id)
+//       .then(res => this.loadBooks())
+//       .catch(err => console.log(err));
+//   };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -57,10 +57,9 @@ class Books extends Component {
     return (
       <Container>
         <Row>
-          {/* Commented Out so we can focus on displaying the rental items
-          <Col size="md-3">
+          <Col size="md-12">
             <Jumbotron>
-              <h1>Categories</h1>
+              <h1>List Your Item</h1>
             </Jumbotron>
             <form>
               <Input
@@ -88,11 +87,11 @@ class Books extends Component {
                 Submit Book
               </FormBtn>
             </form>
-          </Col> */}
-          <Col size="md-12">
-            {/* <Jumbotron>
+          </Col>
+          {/* <Col size="md-12">
+            <Jumbotron>
               <h1>Items to Rent</h1>
-            </Jumbotron> */}
+            </Jumbotron>
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
@@ -109,7 +108,7 @@ class Books extends Component {
             ) : (
               <h3>Render Display Items Here</h3>
             )}
-          </Col>
+          </Col> */}
         </Row>
       </Container>
     );

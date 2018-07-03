@@ -3,19 +3,17 @@ import "./Nav.css";
 
 
 const Nav = () => (
-  <nav className="navbar transparent navbar-inverse navbar-fixed-top">
-    <a className="navbar-brand" href="/">
-      Rent a Center
-    </a>
-    <ul class="nav justify-content-center">
-  <li class="nav-item">
-    <a class="nav-link active" href="#">Sign Up</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link disabled" href="#">Log In</a>
-  </li>
-</ul>
+  <div className="container">
+  <nav className="nav d-flex justify-content-between">
+
+          <a className="p-2 text-muted" href="#">Lawn and Garden</a>
+          <a className="p-2 text-muted" href="#">Electronics</a>
+          <a className="p-2 text-muted" href="#">Home Cleaning</a>
+          <a className="p-2 text-muted" href="#">Recreation</a>
+          <a className="p-2 text-muted" href="#">Transportation</a>
+
   </nav>
+  </div>
 );
 
 export default Nav;
