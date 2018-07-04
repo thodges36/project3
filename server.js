@@ -13,8 +13,11 @@ app.use(express.static("client/build"));
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to the Mongo DB
+// Connect to the Mongo DB 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist");
+
+// mLab connection for deployment
+// mongoose.connect('mongodb://KUcoding:July2018@ds125381.mlab.com:25381/reactreadinglist');
 
 // Start the API server
 app.listen(PORT, function() {
