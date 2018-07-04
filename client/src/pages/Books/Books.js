@@ -66,9 +66,14 @@ class Books extends Component {
                     <img src={book.image} alt={book.title} class="img-thumbnail"></img>
                     
                     <div class="card-body">
+                      <strong class="card-text">
+                        {book.title}  
+                      </strong>
                       <p class="card-text">
-                        {book.title}
+                      <i class="fas fa-map-marker-alt"></i> {book.location}<br/>
+                      <i class="fas fa-dollar-sign"></i> {book.price}/hr
                       </p>
+                    
                     <Link to={"/books/" + book._id}>
 
                       <button type="button" class="btn btn-sm btn-outline-secondary align-center">Learn More</button>
