@@ -57,57 +57,32 @@ class Books extends Component {
     return (
       <Container>
         <Row>
-          {/* Commented Out so we can focus on displaying the rental items
-          <Col size="md-3">
-            <Jumbotron>
-              <h1>Categories</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.title}
-                onChange={this.handleInputChange}
-                name="title"
-                placeholder="Title (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Book
-              </FormBtn>
-            </form>
-          </Col> */}
           <Col size="md-12">
-            {/* <Jumbotron>
-              <h1>Items to Rent</h1>
-            </Jumbotron> */}
             {this.state.books.length ? (
               <List>
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
+                    <div class="card mb-4 box-shadow">
+                    <img src={book.image} alt={book.title}></img>
+                    
+                    <div class="card-body">
+                      <p class="card-text">
+                        {book.title}
+                      </p>
                     <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
+
+                      <button type="button" class="btn btn-sm btn-outline-secondary align-center">Learn More</button>
+
                     </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                    </div>
+
+  
+                    </div>
                   </ListItem>
                 ))}
               </List>
             ) : (
-              <h3>Render Display Items Here</h3>
+              <h3>No items to rent. Check back later.</h3>
             )}
           </Col>
         </Row>

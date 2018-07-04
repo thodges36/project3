@@ -59,7 +59,7 @@ const bookSeed = [
     author: "Neal Saiman",
     synopsis:
       "Restore your tile and grout back to its original color. This chemical-free steamer uses high pressure heat and water to release dirt and mildew trapped in porous floor surfaces.",
-    image: "http://www6.homedepot.com/tool-truck-rental/Tile_Grout_Steam_Cleaner/13070/index.html",
+    image: "https://www.homedepot.com/tool-truck-rental/Tile-Grout-Steam-Cleaner/13070/Tile-and-Grout-steam-Cleaner_marketing-concept.jpeg",
     date: new Date(Date.now())
   },
   {
