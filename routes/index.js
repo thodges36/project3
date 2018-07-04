@@ -7,7 +7,7 @@ const User = require('../models/user');
 
 // GET route for  data
 router.get('/', function (req, res, next) {
-  return res.sendFile(path.join(__dirname + '/templateLogReg/index.html'));
+  return res.sendFile(path.join(__dirname + '/login/index.html'));
 });
 
 
