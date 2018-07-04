@@ -63,7 +63,7 @@ class Books extends Component {
                 {this.state.books.map(book => (
                   <ListItem key={book._id}>
                     <div class="card mb-4 box-shadow">
-                    <img src={book.image} alt={book.title}></img>
+                    <img src={book.image} alt={book.title} class="img-thumbnail"></img>
                     
                     <div class="card-body">
                       <p class="card-text">

@@ -20,27 +20,33 @@ class Detail extends Component {
     return (
       <Container>
         <Row>
-          <Col size="md-12">
-            <Jumbotron>
-              <h1>
-                {this.state.book.title} by {this.state.book.author}
-              </h1>
-            </Jumbotron>
+          <Col size="md-6">
+            
+            <img src={this.state.book.image} alt={this.state.book.title} class="img-large"></img>
+            
           </Col>
         </Row>
         <Row>
-          <Col size="md-10 md-offset-1">
+          <Col size="md-6">
             <article>
-              <h1>Synopsis</h1>
+              <h1>
+                {this.state.book.title}
+              </h1>
               <p>
                 {this.state.book.synopsis}
+              </p>
+              <p>
+                Location: {this.state.book.location}
+              </p>
+              <p>
+                Price: ${this.state.book.price}/hour
               </p>
             </article>
           </Col>
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Authors</Link>
+            <Link to="/">← Back to Catalog</Link>
           </Col>
         </Row>
       </Container>
