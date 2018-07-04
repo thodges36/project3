@@ -1,0 +1,13 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.blog-header {
+    border-bottom: 1px solid;
+}
+
+#header-logo {
+    font-family: 'Slabo 27px', serif;
+    font-size: 200%;
+
+}
