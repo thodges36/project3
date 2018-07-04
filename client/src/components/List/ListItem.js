@@ -1,7 +1,7 @@
 import React from "react";
 
 export const ListItem = props => (
-  <li className="list-group-item">
+  <div className="col-md-4">
     {props.children}
-  </li>
+  </div>
 );
