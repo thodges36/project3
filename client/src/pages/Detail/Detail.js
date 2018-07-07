@@ -47,8 +47,15 @@ class Detail extends Component {
         </Row>
         <Row>
           <Col size="md-2">
-            <Link to="/">← Back to Catalog</Link>
+            <Link to="/summary">
+            <button type="button" class="btn btn-success">Rent Now</button>
+            </Link>
           </Col>
+        </Row>
+        <Row>
+          {/* <Col size="md-2">
+            <Link to="/">← Back to Catalog</Link>
+          </Col> */}
         </Row>
       </Container>
     );
