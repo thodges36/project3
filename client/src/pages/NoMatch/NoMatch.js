@@ -1,4 +1,6 @@
 import React from "react";
+import Header from "../../components/Header";
+
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 
