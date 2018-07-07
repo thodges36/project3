@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
+import Header from "../../components/Header";
 import Jumbotron from "../../components/Jumbotron";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
@@ -15,23 +15,23 @@ class Books extends Component {
     synopsis: ""
   };
 
-//   componentDidMount() {
-//     this.loadBooks();
-//   }
+  componentDidMount() {
+    this.loadBooks();
+  }
 
-//   loadBooks = () => {
-//     API.getBooks()
-//       .then(res =>
-//         this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-//       )
-//       .catch(err => console.log(err));
-//   };
+  loadBooks = () => {
+    API.getBooks()
+      .then(res =>
+        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+      )
+      .catch(err => console.log(err));
+  };
 
-//   deleteBook = id => {
-//     API.deleteBook(id)
-//       .then(res => this.loadBooks())
-//       .catch(err => console.log(err));
-//   };
+  deleteBook = id => {
+    API.deleteBook(id)
+      .then(res => this.loadBooks())
+      .catch(err => console.log(err));
+  };
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -88,27 +88,7 @@ class Books extends Component {
               </FormBtn>
             </form>
           </Col>
-          {/* <Col size="md-12">
-            <Jumbotron>
-              <h1>Items to Rent</h1>
-            </Jumbotron>
-            {this.state.books.length ? (
-              <List>
-                {this.state.books.map(book => (
-                  <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
-                      </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
-                  </ListItem>
-                ))}
-              </List>
-            ) : (
-              <h3>Render Display Items Here</h3>
-            )}
-          </Col> */}
+
         </Row>
       </Container>
     );
