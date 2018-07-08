@@ -11,26 +11,12 @@ class Books extends Component {
   state = {
     books: [],
     title: "",
+    category: "",
     author: "",
-    synopsis: ""
-  };
-
-  componentDidMount() {
-    this.loadBooks();
-  }
-
-  loadBooks = () => {
-    API.getBooks()
-      .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
-      )
-      .catch(err => console.log(err));
-  };
-
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
+    synopsis: "",
+    image: "",
+    location: "",
+    price: ""
   };
 
   handleInputChange = event => {
@@ -42,11 +28,15 @@ class Books extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.title && this.state.author) {
+    if (this.state.title && this.state.category && this.state.author && this.state.image && this.state.location && this.state.price) {
       API.saveBook({
         title: this.state.title,
+        category: this.state.category,
         author: this.state.author,
-        synopsis: this.state.synopsis
+        synopsis: this.state.synopsis,
+        image: this.state.image,
+        location: this.state.location,
+        price: this.state.price
       })
         .then(res => this.loadBooks())
         .catch(err => console.log(err));
@@ -71,10 +61,34 @@ class Books extends Component {
                 placeholder="Title (required)"
               />
               <Input
+                value={this.state.category}
+                onChange={this.handleInputChange}
+                name="category"
+                placeholder="Category (required)"
+              />
+              <Input
                 value={this.state.author}
                 onChange={this.handleInputChange}
                 name="author"
                 placeholder="Author (required)"
+              />
+              <Input
+                value={this.state.image}
+                onChange={this.handleInputChange}
+                name="image"
+                placeholder="Image (required)"
+              />
+              <Input
+                value={this.state.location}
+                onChange={this.handleInputChange}
+                name="location"
+                placeholder="Location (required)"
+              />
+              <Input
+                value={this.state.price}
+                onChange={this.handleInputChange}
+                name="price"
+                placeholder="Price (required)"
               />
               <TextArea
                 value={this.state.synopsis}
@@ -83,7 +97,7 @@ class Books extends Component {
                 placeholder="Synopsis (Optional)"
               />
               <FormBtn
-                disabled={!(this.state.author && this.state.title)}
+                disabled={!(this.state.author && this.state.category && this.state.title && this.state.image && this.state.location && this.state.price)}
                 onClick={this.handleFormSubmit}
               >
                 Submit Book
