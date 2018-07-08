@@ -5,15 +5,11 @@ import ListItem from "./pages/ListItem";
 import Detail from "./pages/Detail";
 import Summary from "./pages/Summary";
 import NoMatch from "./pages/NoMatch";
-import Header from "./components/Header";
-import Nav from "./components/Nav";
 import Login from "./pages/Login/login";
 
 const App = () => (
   <Router>
     <div>
-      <Header />
-      <Nav />
       <Switch>
         <Route exact path="/" component={Books} />
         <Route exact path="/list" component={ListItem} />

@@ -1,15 +1,17 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
+import Nav from "../../components/Nav";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
-import Jumbotron from "../../components/Jumbotron";
-import API from "../../utils/API";
+
 
 class Summary extends Component {
 
   render() {
     return (
       <Container>
+        <Header />
+        <Nav />
         <Row>
           <Col size="md-6">
             
