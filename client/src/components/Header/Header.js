@@ -13,7 +13,7 @@ const Header = () => (
         <a className="blog-header-logo text-dark" href="/">Rental Central</a>
       </div>
       <div className="col-4 d-flex justify-content-end align-items-center">
-        <a className="btn btn-sm btn-outline-secondary" href="#">Log In</a>
+        <a className="btn btn-sm btn-outline-secondary" href="/login">Log In</a>
       </div>
     </div>
   </header>

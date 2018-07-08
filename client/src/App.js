@@ -7,6 +7,7 @@ import Summary from "./pages/Summary";
 import NoMatch from "./pages/NoMatch";
 import Header from "./components/Header";
 import Nav from "./components/Nav";
+import Login from "./pages/Login/login";
 
 const App = () => (
   <Router>
@@ -19,6 +20,7 @@ const App = () => (
         <Route exact path="/summary" component={Summary} />
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
+        <Route exact path="/login" component={Login} />
         <Route component={NoMatch} />
       </Switch>
     </div>

@@ -24,7 +24,7 @@ img{max-width:100%;}
 /*--end reset--*/
 body {
     font-family: 'Jura', sans-serif;
-    background:url(../images/garage.jpg)no-repeat top center fixed;
+    background:url(../images/grey.jpg)no-repeat top center fixed;
     background-size: cover;
 }
 h1 {
