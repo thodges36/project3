@@ -1,19 +1,23 @@
 import React from "react";
 import "./Nav.css";
+import API from "../../utils/API";
+import { Link } from "react-router-dom";
 
 
-const Nav = () => (
-  <div className="container">
+const Nav = (props) => (
   <nav className="nav d-flex justify-content-between">
 
-          <a className="p-2 text-muted" href="#">Lawn and Garden</a>
-          <a className="p-2 text-muted" href="#">Electronics</a>
-          <a className="p-2 text-muted" href="#">Home Cleaning</a>
-          <a className="p-2 text-muted" href="#">Recreation</a>
-          <a className="p-2 text-muted" href="#">Transportation</a>
+        <button onClick={()=>{props.filterBooksFunction("Lawn & Garden")}} className="btn btn-sm btn-outline-secondary align-center">Lawn and Garden</button>
 
+        <button onClick={()=>{props.filterBooksFunction("Electronics")}} className="btn btn-sm btn-outline-secondary align-center" href="#">Electronics</button>
+
+        <button onClick={()=>{props.filterBooksFunction("Home Cleaning")}} className="btn btn-sm btn-outline-secondary align-center" href="#">Home Cleaning</button>
+
+        <button onClick={()=>{props.filterBooksFunction("Recreation")}} className="btn btn-sm btn-outline-secondary align-center" href="#">Recreation</button>
+
+        <button onClick={()=>{props.filterBooksFunction("Transportation")}} className="btn btn-sm btn-outline-secondary align-center" href="#">Transportation</button>
+          
   </nav>
-  </div>
 );
 
 export default Nav;

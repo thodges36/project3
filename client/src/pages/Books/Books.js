@@ -8,11 +8,10 @@ import { List, ListItem } from "../../components/List";
 
 class Books extends Component {
   state = {
-    books: [],
-    title: "",
-    author: "",
-    synopsis: ""
+    allBooks: [],
+    displayBooks: []
   };
+
 
   componentDidMount() {
     this.loadBooks();
@@ -21,21 +20,26 @@ class Books extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ allBooks: res.data, displayBooks: res.data })
       )
       .catch(err => console.log(err));
   };
+
+  filterBooks = (category) => {
+    const result = this.state.displayBooks.filter(book => book.category === category)
+      this.setState({ displayBooks: result })
+  }
 
   render() {
     return (
       <Container>
         <Header />
-        <Nav />
+        <Nav filterBooksFunction = { this.filterBooks } />
         <Row>
           <Col size="md-12">
-            {this.state.books.length ? (
+            {this.state.displayBooks.length ? (
               <List>
-                {this.state.books.map(book => (
+                {this.state.displayBooks.map(book => (
                   <ListItem key={book._id}>
                     <div class="card mb-4 box-shadow">
                     <img src={book.image} alt={book.title} class="img-thumbnail"></img>
@@ -49,14 +53,13 @@ class Books extends Component {
                       <i class="fas fa-dollar-sign"></i> {book.price}/hr
                       </p>
                     
-                    <Link to={"/books/" + book._id}>
+                      <Link to={"/books/" + book._id}>
 
-                      <button type="button" class="btn btn-sm btn-outline-secondary align-center">Learn More</button>
+                        <button type="button" class="btn btn-sm btn-outline-secondary align-center">Learn More</button>
 
-                    </Link>
+                      </Link>
                     </div>
 
-  
                     </div>
                   </ListItem>
                 ))}

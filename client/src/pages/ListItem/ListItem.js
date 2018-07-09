@@ -6,6 +6,8 @@ import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { Input, TextArea, FormBtn } from "../../components/Form";
+import "./ListItem.css";
+
 
 class Books extends Component {
   state = {
@@ -47,64 +49,69 @@ class Books extends Component {
     return (
       <Container>
         <Header />
-        <Nav />
         <Row>
-          <Col size="md-12">
+          <Col size="md-6">
             <Jumbotron>
-              <h1>List Your Item</h1>
+              <h2>Earn money by listing your item</h2>
+              <hr />
+              <p>No matter what kind of object you have to share, Rental Central makes it simple and secure to earn money and reach hundreds of DIYers, just like you.</p>
             </Jumbotron>
+          </Col>
+          <Col size="md-6">
+            <h4>List Your Item</h4>
+            <p>All fields are required.</p>
             <form>
               <Input
                 value={this.state.title}
                 onChange={this.handleInputChange}
                 name="title"
-                placeholder="Title (required)"
+                placeholder="Item"
               />
               <Input
                 value={this.state.category}
                 onChange={this.handleInputChange}
                 name="category"
-                placeholder="Category (required)"
+                placeholder="Category"
               />
               <Input
                 value={this.state.author}
                 onChange={this.handleInputChange}
                 name="author"
-                placeholder="Author (required)"
+                placeholder="Contact Person"
               />
               <Input
                 value={this.state.image}
                 onChange={this.handleInputChange}
                 name="image"
-                placeholder="Image (required)"
+                placeholder="Image (paste image link)"
               />
               <Input
                 value={this.state.location}
                 onChange={this.handleInputChange}
                 name="location"
-                placeholder="Location (required)"
+                placeholder="Location (city, state)"
               />
               <Input
                 value={this.state.price}
                 onChange={this.handleInputChange}
                 name="price"
-                placeholder="Price (required)"
+                placeholder="Hourly price ($)"
               />
               <TextArea
                 value={this.state.synopsis}
                 onChange={this.handleInputChange}
                 name="synopsis"
-                placeholder="Synopsis (Optional)"
+                placeholder="Using a couple of sentences, describe the item."
               />
               <FormBtn
                 disabled={!(this.state.author && this.state.category && this.state.title && this.state.image && this.state.location && this.state.price)}
                 onClick={this.handleFormSubmit}
+                className="btn btn-sm btn-outline-secondary align-center"
               >
-                Submit Book
+                List Item
               </FormBtn>
             </form>
           </Col>
-
         </Row>
       </Container>
     );
