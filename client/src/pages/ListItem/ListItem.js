@@ -107,6 +107,7 @@ class Books extends Component {
                 disabled={!(this.state.author && this.state.category && this.state.title && this.state.image && this.state.location && this.state.price)}
                 onClick={this.handleFormSubmit}
                 className="btn btn-sm btn-outline-secondary align-center"
+                href="/"
               >
                 List Item
               </FormBtn>

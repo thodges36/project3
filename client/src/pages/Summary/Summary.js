@@ -15,16 +15,13 @@ class Summary extends Component {
             
           <h3>Congratulations!</h3>
           <p>You've successfully rented this item.</p>
+          <Link to="/">← Back to Catalog</Link>
+
 
             
           </Col>
         </Row>
 
-        <Row>
-          <Col size="md-2">
-            <Link to="/">← Back to Catalog</Link>
-          </Col>
-        </Row>
       </Container>
     );
   }
