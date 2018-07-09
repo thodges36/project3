@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Header from "../../components/Header";
-import Nav from "../../components/Nav";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import API from "../../utils/API";
@@ -21,7 +20,6 @@ class Detail extends Component {
     return (
       <Container>
         <Header />
-        <Nav />
         <Row>
           <Col size="md-6">
             
@@ -45,10 +43,6 @@ class Detail extends Component {
                 Price: ${this.state.book.price}/hour
               </p>
             </article>
-          </Col>
-        </Row>
-        <Row>
-          <Col size="md-2">
             <Link to="/summary">
             <button type="button" class="btn btn-success">Rent Now</button>
             </Link>

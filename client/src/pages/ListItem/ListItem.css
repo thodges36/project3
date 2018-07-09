@@ -1,0 +1,19 @@
+textarea {
+    overflow: auto;
+    resize: vertical;
+    height: 100px;
+}
+
+.btn {
+    font-family: 'Open Sans', sans-serif;
+    color: #222;
+    background-color: transparent;
+    background-image: none;
+    border-color: #222;
+}
+
+/* .btn:hover {
+    background-color: gray;
+    color: #222;
+    background-color: transparent;
+} */

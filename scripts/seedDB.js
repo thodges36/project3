@@ -44,7 +44,7 @@ const bookSeed = [
   },
   {
     title: "Casio DLP Projector",
-    category: "Electroncis",
+    category: "Electronics",
     author: "Sally Cline",
     synopsis: "Perfect for presentations or movies. Need USB or HDMI connection.",
     image: "https://images.flexshopper.xyz/385x385/product-beta-images/bfa1c7e3-ace4-4999-9d89-3dcb3c5f9967.jpg",
