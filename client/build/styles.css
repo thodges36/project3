@@ -1,13 +1,25 @@
 body {
     font-family: 'Open Sans', sans-serif;
+    background:url(./grey.jpg)no-repeat top center fixed;
+
 }
 
-.blog-header {
-    border-bottom: 1px solid;
+.btn {
+    font-family: 'Open Sans', sans-serif;
+    color: #222;
+    background-color: transparent;
+    background-image: none;
+    border-color: #222;
 }
 
-#header-logo {
+h1, h2, h3, h4 {
     font-family: 'Slabo 27px', serif;
-    font-size: 200%;
+}
 
+a {
+    color: gray;
+}
+
+a:hover {
+    color: lightgray;
 }
