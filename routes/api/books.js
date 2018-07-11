@@ -7,7 +7,7 @@ router.route("/")
   .post(booksController.create);
 
 // Matches with categories
-router.route("/categories/")
+router.route("/list")
   .get(booksController.findByCategory)
   .post(booksController.create);
 
