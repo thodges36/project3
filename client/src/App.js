@@ -12,11 +12,11 @@ const App = () => (
     <div>
       <Switch>
         <Route exact path="/" component={Books} />
-        <Route exact path="/list" component={ListItem} />
-        <Route exact path="/summary" component={Summary} />
+        <Route path="/list" component={ListItem} />
+        <Route path="/summary" component={Summary} />
         <Route exact path="/books" component={Books} />
         <Route exact path="/books/:id" component={Detail} />
-        <Route exact path="/login" component={Login} />
+        <Route path="/login" component={Login} />
         <Route component={NoMatch} />
       </Switch>
     </div>
