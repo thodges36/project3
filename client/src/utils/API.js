@@ -9,6 +9,10 @@ export default {
   getBook: function(id) {
     return axios.get("/api/books/" + id);
   },
+  // Gets the book with given category
+  getCategories: function (category) {
+    return axios.get("/api/books/" + category);
+  },
   // Deletes the book with the given id
   deleteBook: function(id) {
     return axios.delete("/api/books/" + id);

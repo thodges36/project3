@@ -1,19 +1,17 @@
 import React, { Component } from "react";
-import DeleteBtn from "../../components/DeleteBtn";
-import Jumbotron from "../../components/Jumbotron";
+import Header from "../../components/Header";
+import Nav from "../../components/Nav";
 import API from "../../utils/API";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "../../components/Grid";
 import { List, ListItem } from "../../components/List";
-import { Input, TextArea, FormBtn } from "../../components/Form";
 
 class Item extends Component {
   state = {
-    item: [],
-    price: "",
-    first_name: "",
-    last_name: ""
+    allBooks: [],
+    displayBooks: []
   };
+
 
   componentDidMount() {
     this.loadBooks();
@@ -22,91 +20,52 @@ class Item extends Component {
   loadBooks = () => {
     API.getBooks()
       .then(res =>
-        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+        this.setState({ allBooks: res.data, displayBooks: res.data })
       )
       .catch(err => console.log(err));
   };
 
-  deleteBook = id => {
-    API.deleteBook(id)
-      .then(res => this.loadBooks())
-      .catch(err => console.log(err));
-  };
-
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
-
-  handleFormSubmit = event => {
-    event.preventDefault();
-    if (this.state.title && this.state.author) {
-      API.saveBook({
-        title: this.state.title,
-        author: this.state.author,
-        synopsis: this.state.synopsis
-      })
-        .then(res => this.loadBooks())
-        .catch(err => console.log(err));
-    }
-  };
+  filterBooks = (category) => {
+    const result = this.state.displayBooks.filter(book => book.category === category)
+      this.setState({ displayBooks: result })
+  }
 
   render() {
     return (
-      <Container fluid>
+      <Container>
+        <Header />
+        <Nav filterBooksFunction = { this.filterBooks } />
         <Row>
-          <Col size="md-6">
-            <Jumbotron>
-              <h1>What Items are up for Rent?</h1>
-            </Jumbotron>
-            <form>
-              <Input
-                value={this.state.item}
-                onChange={this.handleInputChange}
-                name="item"
-                placeholder="item (required)"
-              />
-              <Input
-                value={this.state.author}
-                onChange={this.handleInputChange}
-                name="author"
-                placeholder="Author (required)"
-              />
-              <TextArea
-                value={this.state.synopsis}
-                onChange={this.handleInputChange}
-                name="synopsis"
-                placeholder="Synopsis (Optional)"
-              />
-              <FormBtn
-                disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit Item
-              </FormBtn>
-            </form>
-          </Col>
-          <Col size="md-6 sm-12">
-            <Jumbotron>
-              <h1>Items to Rent</h1>
-            </Jumbotron>
-            {this.state.books.length ? (
+          <Col size="md-12">
+            {this.state.displayBooks.length ? (
               <List>
-                {this.state.books.map(book => (
+                {this.state.displayBooks.map(book => (
                   <ListItem key={book._id}>
-                    <Link to={"/books/" + book._id}>
-                      <strong>
-                        {book.title} by {book.author}
+                    <div class="card mb-4 box-shadow">
+                    <img src={book.image} alt={book.title} class="img-thumbnail"></img>
+                    
+                    <div class="card-body">
+                      <strong class="card-text">
+                        {book.title}  
                       </strong>
-                    </Link>
-                    <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+                      <p class="card-text">
+                      <i class="fas fa-map-marker-alt"></i> {book.location}<br/>
+                      <i class="fas fa-dollar-sign"></i> {book.price}/hr
+                      </p>
+                    
+                      <Link to={"/books/" + book._id}>
+
+                        <button type="button" class="btn btn-sm btn-outline-secondary align-center">Learn More</button>
+
+                      </Link>
+                    </div>
+
+                    </div>
                   </ListItem>
                 ))}
               </List>
             ) : (
-              <h3>No Results to Display</h3>
+              <h3>No items to rent. Check back later.</h3>
             )}
           </Col>
         </Row>

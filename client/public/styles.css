@@ -1,0 +1,25 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background:url(./grey.jpg)no-repeat top center fixed;
+
+}
+
+.btn {
+    font-family: 'Open Sans', sans-serif;
+    color: #222;
+    background-color: transparent;
+    background-image: none;
+    border-color: #222;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Slabo 27px', serif;
+}
+
+a {
+    color: gray;
+}
+
+a:hover {
+    color: lightgray;
+}

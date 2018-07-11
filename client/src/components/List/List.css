@@ -31,3 +31,27 @@
 .list-overflow-container li:last-child {
   border-bottom: none;
 }
+
+.img-thumbnail {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  max-width: 150px;
+  max-height: 150px; 
+  width: auto;
+  height: auto;
+  border: none;
+}
+
+.img-large{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 5px;
+  max-width: 550px;
+  max-height: 550px; 
+  width: auto;
+  height: auto;
+  border: none;
+}

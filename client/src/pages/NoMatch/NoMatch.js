@@ -1,9 +1,13 @@
 import React from "react";
+import Header from "../../components/Header";
+
 import { Col, Row, Container } from "../../components/Grid";
 import Jumbotron from "../../components/Jumbotron";
 
 const NoMatch = () => (
   <Container fluid>
+    <Header />
+
     <Row>
       <Col size="md-12">
         <Jumbotron>

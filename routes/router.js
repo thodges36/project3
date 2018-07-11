@@ -1,11 +1,11 @@
-var express = require('express');
-var router = express.Router();
-var User = require('../models/user');
+const express = require('express');
+const router = express.Router();
+const User = require('../models/user');
 
 
 // GET route for  data
 router.get('/', function (req, res, next) {
-  return res.sendFile(path.join(__dirname + '/templateLogReg/index.html'));
+  return res.sendFile(path.join(__dirname + '/login/index.html'));
 });
 
 
@@ -59,14 +59,14 @@ router.post('/', function (req, res, next) {
 })
 
 // GET route after registering
-router.get('/profile', function (req, res, next) {
+router.get('/listItem', function (req, res, next) {
   User.findById(req.session.userId)
     .exec(function (error, user) {
       if (error) {
         return next(error);
       } else {
         if (user === null) {
-          var err = new Error('Not authorized! Go back!');
+          var err = new Error('Please Signup or Sign In');
           err.status = 400;
           return next(err);
         } else {
