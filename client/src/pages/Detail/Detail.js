@@ -51,7 +51,7 @@ class Detail extends Component {
             
           </Col>
   
-          <Col size="md-5">
+          <Col size="md-4">
           <div>
             <h4>
               Rent this item
@@ -77,7 +77,7 @@ class Detail extends Component {
                />
               </label>
               <br />
-              <label>
+              <label style="padding:2px">
                 End Time (hour): 
                 <input
                   name="end"
