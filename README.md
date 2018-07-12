@@ -1,13 +1,20 @@
-# project3
-Rent a Thing lets users quickly and easily rent items that are sitting around in their garage or backyard. 
+Rental-Central
+===============
 
-Our app offers value for people who:
--Are looking to use items that but are too expensive to buy
---or-
--Have made a significant investment in an item, only to use a handful of times
+## Rental Central allows people to easily rent out items and make money from tools that have been gathering dust.
 
-Examples include:
--Pools
--Chainsaws
--Pressure washers
--Carpet cleaners
+Created by: 
+* Ted Hodges 
+* Crystal Hughes,
+* Steven Bender   
+* Cameron Wilkinson
+
+[Rental-Central]
+(https://thawing-ocean-25773.herokuapp.com/.)
+
+Rental Central was built with:
+* React 
+* MongoDB
+* Heroku
+
+
