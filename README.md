@@ -13,8 +13,8 @@ Created by:
 (https://thawing-ocean-25773.herokuapp.com/.)
 
 Rental Central was built with:
-*React 
-*MongoDB
-*Heroku
+* React 
+* MongoDB
+* Heroku
 
 
